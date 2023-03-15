@@ -5,28 +5,35 @@
     <title>Bai 8</title>
 </head>
 <body>
+<button type="button" id="Start" onclick="start()">Start</button>
 <script>
-    let minN = prompt('Nhap vao gia tri dau cua khoang: ');
-    let maxN = prompt('Nhap vao gia tri cuoi cua khoang: ');
-    let guessN = prompt('Nhap vao so ban doan:');
-    let randomN = Math.floor(Math.random() * (maxN - minN + 1))
-    console.log(randomN)
-    let count = 1;
-    while (guessN >= minN && guessN <= maxN && count < 10) {
-        if (guessN > randomN) {
-            alert('So ban doan LON hon gia tri ngau nhien')
-            guessN = prompt('co hoi doan lai:');
-            count++;
-        } else if (guessN < randomN) {
-            alert('So ban doan NHO hon gia tri ngau nhien')
-            guessN = prompt('co hoi doan lai:');
-            count++;
-        } else {
-            alert('Ban da doan dung')
-            break
+    function start(){
+        let minN = prompt('Nhap vao gia tri dau cua khoang: ');
+        let maxN = prompt('Nhap vao gia tri cuoi cua khoang: ');
+        let guessN = prompt('Nhap vao so ban doan:');
+        let randomN = Math.floor(Math.random() * (maxN - minN + 1))+minN
+        console.log(randomN)
+        let count = 1;
+        while (guessN >= minN && guessN <= maxN && count < 10) {
+            if (guessN > randomN) {
+                alert('So ban doan LON hon gia tri ngau nhien')
+                guessN = prompt('co hoi doan lai:');
+                count++;
+            } else if (guessN < randomN) {
+                alert('So ban doan NHO hon gia tri ngau nhien')
+                guessN = prompt('co hoi doan lai:');
+                count++;
+            } else {
+                alert('Ban da doan dung')
+                break
+            }
+            if (count === 3) {
+                alert('Co hoi cua ban da het - Game over')
+                break
+            }
         }
-        if (count === 3) {
-            alert('Co hoi cua ban da het - Game over')
+        if (guessN < minN || guessN > maxN ) {
+            alert('Vui long doan so trong khoang cho truoc!')
         }
     }
 </script>
