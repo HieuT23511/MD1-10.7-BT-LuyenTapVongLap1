@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8</title>
+</head>
+<body>
+<script>
+    let minN = prompt('Nhap vao gia tri dau cua khoang: ');
+    let maxN = prompt('Nhap vao gia tri cuoi cua khoang: ');
+    let guessN = prompt('Nhap vao so ban doan:');
+    let randomN = Math.floor(Math.random() * (maxN - minN + 1))
+    console.log(randomN)
+    let count = 1;
+    while (guessN >= minN && guessN <= maxN && count < 10) {
+        if (guessN > randomN) {
+            alert('So ban doan LON hon gia tri ngau nhien')
+            guessN = prompt('co hoi doan lai:');
+            count++;
+        } else if (guessN < randomN) {
+            alert('So ban doan NHO hon gia tri ngau nhien')
+            guessN = prompt('co hoi doan lai:');
+            count++;
+        } else {
+            alert('Ban da doan dung')
+            break
+        }
+        if (count === 3) {
+            alert('Co hoi cua ban da het - Game over')
+        }
+    }
+</script>
+</body>
+</html>
