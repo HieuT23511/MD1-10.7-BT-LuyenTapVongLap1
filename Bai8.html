@@ -8,11 +8,10 @@
 <button type="button" id="Start" onclick="start()">Start</button>
 <script>
     function start(){
-        let minN = prompt('Nhap vao gia tri dau cua khoang: ');
-        let maxN = prompt('Nhap vao gia tri cuoi cua khoang: ');
-        let guessN = prompt('Nhap vao so ban doan:');
-        let randomN = Math.floor(Math.random() * (maxN - minN + 1))+minN
-        console.log(randomN)
+        let minN = +prompt('Nhap vao gia tri dau cua khoang: ');
+        let maxN = +prompt('Nhap vao gia tri cuoi cua khoang: ');
+        let guessN = +prompt('Nhap vao so ban doan:');
+        let randomN = Math.floor(Math.random() * (maxN - minN + 1))+minN;
         let count = 1;
         while (guessN >= minN && guessN <= maxN && count < 10) {
             if (guessN > randomN) {
